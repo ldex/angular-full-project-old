@@ -33,7 +33,8 @@ export class ProductService {
     return this.http.post<Product>(this.baseUrl, newProduct);
   }
 
-  updateProduct(id: number, updatedProduct: Product): Observable<Product> {
+  updateProduct(id: number, updatedProduct: Product): Observable<Product> {    
+    updatedProduct.id = id;
     return this.http.put<Product>(this.baseUrl + id, updatedProduct);
   }
 
